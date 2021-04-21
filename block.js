@@ -4,14 +4,14 @@ class Block{
            restitution:0.4,
            friction:1.0,
        }
-       this.body=Bodies.rect(x,y,width,height,options)
+       this.body=Bodies.rectangle(x,y,width,height,options)
        this.width=width
        this.height=height
        World.add(world,this.body)
    }
-   dislay(){
+   display(){
        var angle=this.body.angle
-       var pos=this.bosy.position
+       var pos=this.body.position
        push()
        translate(pos.x,pos.y)
        rotate(angle)

@@ -8,7 +8,7 @@ var engine,world
 var holder,ball,ground
 var stand1,stand2
 var ball
-var slingshot
+var slingShot
 var polygon_img
 
 function preload(){
@@ -22,8 +22,9 @@ function setup(){
 
     createCanvas(900,400)
     ground=new Ground()
+    ball=new Ball(100,300,50)
     stand1=new Stand(380,300,270,10)
-    stand2=new Stand(780,200,200,10)
+    stand2=new Stand(710,200,200,10)
 
     block1=new Block(280,275,30,40)
     block2=new Block(310,275,30,40)
@@ -45,7 +46,7 @@ function setup(){
     block16=new Block(370,195,30,40)
     block17=new Block(400,195,30,40)
     block18=new Block(430,195,30,40)
- 
+
     block19=new Block(370,155,30,40)
     block20=new Block(400,155,30,40)
 
@@ -63,17 +64,74 @@ function setup(){
     blocks8=new Block(730,135,30,40)
 
     blocks9=new Block(700,95,30,40)
-
-   
-    ball=Bodies.circle(50,200,20)
-    World.add(world,ball)
     
-    slingShot=new SlingShot(this.ball,{x:200,y:200})
+    slingShot=new SlingShot(ball.body,{x:200,y:200})
 
 }
 
 function draw(){
-    background("white")
+    background("purple")
+
+    ground.display()
+    fill("green")
+    stand1.display()
+    stand2.display()
+
+    fill("cyan")
+    block1.display()
+    block2.display()
+    block3.display()
+    block4.display()
+    block5.display()
+    block6.display()
+    block7.display()
+    block8.display()
+    fill("orange")
+    block9.display()
+    block10.display()
+    block11.display()
+    block12.display()
+    block13.display()
+    block14.display()
+    fill("red")
+    block15.display()
+    block16.display()
+    block17.display()
+    block18.display()
+    fill("pink")
+    block19.display()
+    block20.display()
+
+    block21.display()
+
+    fill("cyan")
+    blocks1.display()
+    blocks2.display()
+    blocks3.display()
+    blocks4.display()
+    blocks5.display()
+    fill("pink")
+    blocks6.display()
+    blocks7.display()
+    blocks8.display()
+    fill("orange")
+    blocks9.display()
+
+    ball.display()
+
+   
+
+   
+
+    slingShot.display()
+    
     Engine.update(engine)
 }
 
+function mouseDragged(){
+     Matter.Body.setPosition(ball.body,{x:mouseX,y:mouseY});
+     } 
+     
+     function mouseReleased(){ 
+         slingShot.fly();
+         }

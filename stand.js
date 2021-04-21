@@ -1,18 +1,18 @@
 class Stand{
     constructor(x,y,width,height){
         var options={
-            isStaic:true
+            isStatic:true
         }
-        this.body=Bodies.rect(x,y,width,height,options)
+        this.body=Bodies.rectangle(x,y,width,height,options)
         this.width=width
         this.height=height
         World.add(world,this.body)
     }
-    dislay(){
+    display(){
         var angle=this.body.angle
-        var pos=this.bosy.position
-        stokeWeight(2)
-        fill("black")
+        var pos=this.body.position
+        strokeWeight(2)
+        fill("green")
         push()
         translate(pos.x,pos.y)
         rotate(angle)
