@@ -5,7 +5,7 @@ class Ball{
             friction:1.0,
             density:0.5
         }
-        this.body=Bodies.circle(x,y,radius,options)
+        this.body=Bodies.circle(x,y,radius/2,options)
         this.radius=radius
         World.add(world,this.body)
         this.image=loadImage("polygon.png")
